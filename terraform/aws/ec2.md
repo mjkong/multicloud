@@ -68,7 +68,7 @@ $ ssh-keygen -t rsa -b 4096 -C "<EMAIL_ADDRESS>" -f "$HOME/.ssh/infra_admin" -N 
 key 파일 생성 후 ```infra.tf``` 파일을 생성하여 key-pair 등록을 위한 HCL을 작성합니다.
 
 ~~~shell
-esource "aws_key_pair" "infra_admin" {
+Resource "aws_key_pair" "infra_admin" {
   key_name = "infra_admin"
   public_key = "${file("~/.ssh/infra_admin.pub")}"
 }
